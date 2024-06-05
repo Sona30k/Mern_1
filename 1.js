@@ -16,3 +16,11 @@ console.log(a==b);
 console.log(a!=b);
 console.log(a>=b);
 console.log(a<=b);
+
+//logical
+
+console.log(2>3 || 6>4);
+console.log(2>3 && 6>4);
+console.log(!true);
+
+
