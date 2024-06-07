@@ -1,5 +1,5 @@
 //object
-let obj={
+/*let obj={
     //name:"sona",
     age:19,
     //"last name":"kerketta",
@@ -25,4 +25,21 @@ for(i in obj){
 for(let j of Object.keys(obj)){
     
     console.log(obj[j])
+}*/
+
+//objects inside array
+
+let are=[
+    {user:1, name:"sona"},
+    {user:2, name:"ashu"},
+    {user:3, name:"dak"}
+    ]
+console.log(are[0]);
+for(let i in are){
+    console.log(are[i]);
+    console.log(are[i.name])
 }
+let [a,b,{name}]=are;
+console.log(a);
+console.log(b);
+console.log(name)
