@@ -70,6 +70,20 @@ function done(){
 });
 */
 
-load().then(collect).then(approve).then(done).catch((err)=>{
-    console.log(err)
-})
+//load().then(collect).then(approve).then(done).catch((err)=>{
+    //console.log(err)
+//})
+
+//async await
+
+async function exe(){
+    await load();
+    await collect();
+    await approve();
+    await done();
+
+
+}
+exe().catch((errr)=>{
+    console.log(errr)
+});
