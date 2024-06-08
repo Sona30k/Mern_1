@@ -9,37 +9,54 @@ function add(a,b,caller){
 }
 add(5,10,fun)
 
-//callback hell
+//callback hell &by promise
 
-function load(callback){
-    setTimeout(() =>{
-        console.log("1 -loading data.....")
-        callback();
+function load(){
+    return new Promise((accept,reject)=>{
+        
+        setTimeout(() =>{
+            console.log("1 -loading data.....")
+            accept();
+            
+    
+        },4000)
 
-    },4000)
+    })
+    
     
 }
-function collect(callback){
-    setTimeout(() =>{
-        console.log("2-collecting data");
-        callback();
+function collect(){
+    return new Promise((accept,reject) =>{
+        setTimeout(() =>{
+            console.log("2-collecting data");
+            accept();
+            
+    
+        },5000)
 
-    },5000)
+    })
+
+    
     
 }
-function approve(callback){
-    setTimeout (() =>{
-        console.log("3-aprroving adta")
-        callback();
+function approve(){
+    return new Promise((accept,reject)=>{
+        setTimeout (() =>{
+            console.log("3-aprroving adta")
+            reject('errorr');
+            
+    
+        },6000)
 
-    },6000)
+    })
+   
     
 }
 
 function done(){
     console.log("4- yayaa donee")
 }
-load(function(){
+/*load(function(){
     collect(function(){
         approve(function(){
             done();
@@ -51,3 +68,8 @@ load(function(){
     
 
 });
+*/
+
+load().then(collect).then(approve).then(done).catch((err)=>{
+    console.log(err)
+})
